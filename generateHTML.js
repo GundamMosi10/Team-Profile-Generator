@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateHTML = ({ name, ID, Email, OfficeNumber }) =>
+function generateHTML(data) {
+    return
 `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +62,7 @@ const generateHTML = ({ name, ID, Email, OfficeNumber }) =>
         </div>
       </div>
 </body>
-</html>`
+</html>`;
+}
 
 module.exports = generateHTML;
