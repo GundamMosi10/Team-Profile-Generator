@@ -26,5 +26,15 @@ const questons = [
 
 function writeFile(fileName, answers){ //this takes the answers from the prompt above and plugs them into the README file
     fs.writeFile(fileName, answers, (err) => 
-        err ? console.log(err) : console.log('Successfully created the Team-Profile') //lets us know the README has been written succesfully 
+        err ? console.log(err) : console.log('Successfully created the index1.html') //lets us know the README has been written succesfully 
         )}
+
+function initialize() {
+    inquirer.prompt(questions)
+    .then((answers) => {
+        console.log(answers)
+        writeFile('index1.html', generateMarkdown(answers))
+     })
+}        
+
+initialize();
