@@ -1,40 +1,34 @@
 const inquirer = require('inquirer'); //inquirer package remember to install on command line
 const fs = require('fs'); //Filesystem
+const generateHTML = require('./generateHTML');
 
-const questons = [
-    {
-        type: 'input',
-        name: 'name',
-        message: 'What is the Team Managers name?',
-    },
-    {
-        type: 'input',
-        name: 'ID',
-        message: 'What is the Team Managers ID?',
-    },
-    {
-        type: 'input',
-        name: 'Email',
-        message: 'What is the Team Managers email?',
-    },
-    {
-        type: 'input',
-        name: 'Office Number',
-        message: 'What is the Team Managers Office Number?',
-    }
-]
-
-function writeFile(fileName, answers){ //this takes the answers from the prompt above and plugs them into the README file
-    fs.writeFile(fileName, answers, (err) => 
-        err ? console.log(err) : console.log('Successfully created the index1.html') //lets us know the README has been written succesfully 
-        )}
-
-function initialize() {
-    inquirer.prompt(questions)
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the Team Managers name?',
+        },
+        {
+            type: 'input',
+            name: 'ID',
+            message: 'What is the Team Managers ID?',
+        },
+        {
+            type: 'input',
+            name: 'Email',
+            message: 'What is the Team Managers email?',
+        },
+        {
+            type: 'input',
+            name: 'Office Number',
+            message: 'What is the Team Managers Office Number?',
+        },
+    ])
     .then((answers) => {
-        console.log(answers)
-        writeFile('index1.html', generateMarkdown(answers))
-     })
-}        
-
-initialize();
+        const htmlPageContent = generateHTML(answers);
+    
+        fs.writeFile('index.html', htmlPageContent, (err) =>
+          err ? console.log(err) : console.log('Successfully created generate.html')
+        );
+      });
