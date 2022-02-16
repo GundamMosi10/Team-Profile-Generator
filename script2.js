@@ -88,12 +88,12 @@ const promptEngineer = () => { //the engineer prompt questions only difference i
         },
     ]).then (answers => {
         const engineer = new Engineer(answers.name, answers.Id, answers.email, answers.githubUserName)
-        teamMembers.push(engineer);
+        teamMembers.push(engineer); //the answers from the user will be pushed to the engineer card in the html 
         promptMenu();
     }) 
 }
 
-const promptIntern = () => {
+const promptIntern = () => { //the intern prompt will fire once the user has selected they want to add an intern to the team
     return inquirer.prompt([
         {
             type: 'input',
@@ -117,8 +117,8 @@ const promptIntern = () => {
         },
     ]).then (answers => {
         const intern = new Intern(answers.name, answers.Id, answers.email, answers.school)
-        teamMembers.push(intern);
-        promptMenu();
+        teamMembers.push(intern); //this answers from the intern questions will be pushed to the html for the intern card 
+        promptMenu(); //asks the user again if they want to add more people to the team 
     })
 }
 
@@ -134,62 +134,3 @@ promptManager();
 
 
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const employeeQuestions = [
-//     {
-//         type: 'input',
-//         name: 'name',
-//         message: 'What is this employees name?',
-//     },
-//     {
-//         type: 'input',
-//         name: 'id',
-//         message: 'What is your id number?',
-//     },
-//     {
-//         type: 'input',
-//         name: 'email',
-//         message: 'What is your email address?',
-//     }
-// ]
-
-// const engineerQuestions = [
-//     {
-//         type: 'input',
-//         name: 'githubName',
-//         message: 'What is your github user name?',
-//     }
-// ]
-
-// const interQuestions = [
-//     {
-//         type: 'input',
-//         name: 'school', 
-//         message: 'What is the school that you go to?',
-//     }
-// 
