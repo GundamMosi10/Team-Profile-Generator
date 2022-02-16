@@ -2,8 +2,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 function generateHTML(data) {
-    return
-`<!DOCTYPE html>
+return`
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@ function generateHTML(data) {
         <div class="card">
           <img src="https://www.footballkitarchive.com/static/logos/players/Ronaldinho.jpg" class="card-img-top" alt="RonaldinhoImage">
           <div class="card-body">
-            <h5 class="card-title">Manager${manager}</h5>
+            <h5 class="card-title">Manager</h5>
             <p class="card-text"><ul class="list-group">
                 <li class="list-group-item">Name: ${manager.name}</li>
                 <li class="list-group-item">ID:${manager.id}</li>
@@ -37,7 +37,7 @@ function generateHTML(data) {
         <div class="card">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpIypCwWHGCZ6qrGyquEWFWjfoBmLAqrUIyTn3VaTjaqSWaMByv7pcY7kYH-4VpnCvdUE&usqp=CAU" class="card-img-top" alt="RonaldoBrazil">
           <div class="card-body">
-            <h5 class="card-title">Engineer${engineer}</h5>
+            <h5 class="card-title">Engineer</h5>
             <p class="card-text"><ul class="list-group">
                 <li class="list-group-item">Name:${engineer.name}</li>
                 <li class="list-group-item">ID:${engineer.id}</li>
@@ -50,7 +50,7 @@ function generateHTML(data) {
         <div class="card">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTktdb-nP-bujaoPkZx_vVEu-mAFRodBUdyoo4vKSY28j0Acm4TbNlssILR2ZYoABzKgKg&usqp=CAU" class="card-img-top" alt="RobertoCarlosBrazil">
           <div class="card-body">
-            <h5 class="card-title">Intern${intern}</h5>
+            <h5 class="card-title">Intern</h5>
             <p class="card-text"><ul class="list-group">
                 <li class="list-group-item">Name:${inter.name}</li>
                 <li class="list-group-item">ID:${intern.id}</li>
