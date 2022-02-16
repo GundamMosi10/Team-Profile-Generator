@@ -33,10 +33,10 @@ describe("intern", () => {
           expect(role).toEqual("intern");
         });
     });
-    describe("getschool", () => {
+    describe("getSchool", () => {
         it("should get the name of the school the intern goes to", () => {
           const intern = new Intern ('bob', '88', 'bob@gmail.com', 'Berkley');
-          const github = intern.getgithub();
+          const school = intern.getSchool();
     
           expect(school).toEqual("Berkley");
         });
