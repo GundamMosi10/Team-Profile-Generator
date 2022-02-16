@@ -95,7 +95,9 @@ module.exports = team => {
           <p class="lead">My Team</p>
         </div>
     </div>
+    <main>
     <div class="card-deck">${generateTeam(team)}</div>
+    </main>
 </body>
 </html>
 `;

@@ -19,7 +19,7 @@ const promptManager = () => {
         },
         {
             type: 'input',
-            name: 'id',
+            name: 'Id',
             message: 'Please enter your employee Id',
         },
         {
@@ -48,7 +48,7 @@ const promptMenu = () => {
         choices: ['Manager', 'Engineer', 'Intern', 'Finish Team'],
     }])
     .then(userChoices => {
-        switch (userChoices.menu) {
+        switch (userChoices.menu) { //a swtich case so that if the user chooses a different employee type then they will get the right prompt
             case 'Manager':
                 promptManager();
                 break;
@@ -73,7 +73,7 @@ const promptEngineer = () => {
         },
         {
             type: 'input',
-            name: 'id',
+            name: 'Id',
             message: 'Please enter your employee Id',
         },
         {
@@ -102,7 +102,7 @@ const promptIntern = () => {
         },
         {
             type: 'input',
-            name: 'id',
+            name: 'Id',
             message: 'Please enter your employee Id',
         },
         {
