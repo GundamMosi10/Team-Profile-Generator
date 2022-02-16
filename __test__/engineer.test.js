@@ -33,10 +33,10 @@ describe("engineer", () => {
           expect(role).toEqual("engineer");
         });
     });
-    describe("getgithub", () => {
+    describe("getGithub", () => {
         it("should get the Github user name of the engineer", () => {
           const engineer = new Engineer ('bob', '88', 'bob@gmail.com', 'GundamMosi10');
-          const github = engineer.getgithub();
+          const github = engineer.getGithub();
     
           expect(github).toEqual("GundamMosi10");
         });
