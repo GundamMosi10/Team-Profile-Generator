@@ -45,10 +45,10 @@ const promptMenu = () => { //this is the prompt to ask after each employee if we
         type: 'list',
         name: 'employeeType',
         message: 'What kind of employee are you?',
-        choice: ['Manager', 'Engineer', 'Intern', 'Finish Team'],
+        choices: ['Manager', 'Engineer', 'Intern', 'Finish Team'],
     }])
-    .then(userChoice => {
-        switch (userChoice.employeeType) { //a swtich case so that if the user chooses a different employee type then they will get the right prompt
+    .then(userChoices => {
+        switch (userChoices.employeeType) { //a swtich case so that if the user chooses a different employee type then they will get the right prompt
             case 'Manager':
                 promptManager();
                 break;
