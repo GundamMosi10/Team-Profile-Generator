@@ -1,9 +1,12 @@
 const inquirer = require('inquirer'); //inquirer package remember to install on command line
 const fs = require('fs'); //Filesystem
-const Manager = require('manager');
-const Engineer = require('engineer');
-const Intern = require('intern');
+const Manager = require('./manager');
+const Engineer = require('./engineer');
+const Intern = require('./intern');
+const Employee = require('./employee');
+const generateHTML = require('./generateHTML');
 const teamMembers = [];
+
 
 const promptManager = () => {
     return inquirer.prompt([
