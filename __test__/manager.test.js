@@ -11,7 +11,7 @@ describe("manager", () => {
     });
     describe("getID", () => {
         it("should get ID of manager", () => {
-          const manager = new Manager ('bob', '88', 'bob@gmail.com');
+          const manager = new Manager ('bob', '88', 'bob@gmail.com', 'manager', '50');
           const id = manager.getId();
     
           expect(id).toEqual("88");
@@ -19,7 +19,7 @@ describe("manager", () => {
     });
     describe("getEmail", () => {
         it("should get email of manager", () => {
-          const manager = new Manager ('bob', '88', 'bob@gmail.com');
+          const manager = new Manager ('bob', '88', 'bob@gmail.com', 'manager', '50');
           const email = manager.getEmail();
     
           expect(email).toEqual("bob@gmail.com");
@@ -27,18 +27,18 @@ describe("manager", () => {
       });
     describe("getRole", () => {
         it("should get role of the manager", () => {
-          const manager = new Manager ('bob', '88', 'bob@gmail.com');
+          const manager = new Manager ('bob', '88', 'bob@gmail.com', 'manager', '50');
           const role = manager.getRole();
     
           expect(role).toEqual("manager");
         });
     });
-    describe("getOfficeNumber", () => {
+    describe("getofficeNumber", () => {
         it("should get the office number of the manager", () => {
-          const manager = new Manager ('bob', '88', 'bob@gmail.com');
-          const officeNumber = manager.getOfficeNumber();
+          const manager = new Manager ('bob', '88', 'bob@gmail.com', 'manager', '50');
+          const officeNumber = manager.getofficeNumber();
     
-          expect(officeNumber).toEqual("");
+          expect(officeNumber).toEqual("50");
         });
     });
 });
