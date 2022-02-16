@@ -3,7 +3,9 @@ const fs = require('fs'); //Filesystem
 const Manager = require('./manager');
 const Engineer = require('./engineer');
 const Intern = require('./intern');
-const Employee = require('./employee');
+const path = require('path');
+const OUTPUT_DIR = path.resolve(_dirname, 'output')
+const outputPath = path.join(OUTPUT_DIR, 'team.html');
 const generateHTML = require('./generateHTML');
 const teamMembers = [];
 
@@ -121,6 +123,9 @@ const promptIntern = () => {
 }
 
 const FinishTeam = () => {
+    if (!fs.existsSync(OUTPUT_DIR)) {//checks to see if any file exists
+        fs.mkdirSync(OUTPUT_DIR)     //this makes a new file as there wasnt one before
+    }
     fs.writeFileSync(outputPath, generateHTML(teamMembers));
 }
 
