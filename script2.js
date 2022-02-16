@@ -22,11 +22,40 @@ const promptManager = () => {
             name: 'email',
             message: 'Please enter your email address',
         },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'What is your office number?',
+        },
     ]).then (answers => {
         const manager = new Manager(answers.name, answers.Id, answers.email, answers.officeNumber)
         teamMembers.push(manager);
         promptMenu();
     })
+}
+
+const promptMenu = () => {
+    return inquirer.prompt([
+    {
+        type: 'list',
+        name: 'employeeType',
+        message: 'What kind of employee is this?',
+        choices: ['Manager', 'Engineer', 'Intern', 'Finish Team'],
+    }
+]).then(userChoices => {
+    switch (userChoices.menu) {
+        case 'Manager':
+            promptManager();
+            break;
+        case 'Engineer':
+            promptEngineer();
+            break;
+        case 'Intern':
+            promptIntern();
+            break;
+        default: 
+            FinishedTeam();
+    }
 }
 
 
@@ -65,15 +94,6 @@ const promptManager = () => {
 
 
 
-// const menuQuestion = [
-//     {
-//         type: 'list',
-//         name: 'employeeType',
-//         choices: ['Manager', 'Engineer', 'Intern', 'None'],
-//         message: 'What kind of employee is this?',
-//     }
-// ]
-
 // const employeeQuestions = [
 //     {
 //         type: 'input',
@@ -106,4 +126,4 @@ const promptManager = () => {
 //         name: 'school', 
 //         message: 'What is the school that you go to?',
 //     }
-// ]
+// 
