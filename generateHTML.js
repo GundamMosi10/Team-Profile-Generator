@@ -47,7 +47,7 @@ const generateTeam = (team) => {
           <div class="card-body">
             <h5 class="card-title">Intern</h5>
             <p class="card-text"><ul class="list-group">
-                <li class="list-group-item">Name:${inter.name}</li>
+                <li class="list-group-item">Name:${intern.name}</li>
                 <li class="list-group-item">ID:${intern.id}</li>
                 <li class="list-group-item">Email: <span id='email'><a href='mailto:${intern.email}'>${intern.email}</a></span></li>
                 <li class="list-group-item">School:${intern.school}</li>
@@ -58,7 +58,7 @@ const generateTeam = (team) => {
     `;
     html.push(internHTML);
   }
-
+  //this for loop is to loop through and get each role that is from the user input 
   for (let i = 0; i < team.length; i++) {
     if (team[i].getRole() === 'Manager') {
       generateManager(team[i]);
@@ -71,7 +71,7 @@ const generateTeam = (team) => {
     }
   }
 
-  return html.join('');
+  return html.join(''); //joins all the pieces together/team members in the html
 
 }
 

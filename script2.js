@@ -4,7 +4,7 @@ const Manager = require('./manager');
 const Engineer = require('./engineer');
 const Intern = require('./intern');
 const path = require('path');
-const OUTPUT_DIR = path.resolve(_dirname, 'output')
+const OUTPUT_DIR = path.resolve(__dirname, 'output')
 const outputPath = path.join(OUTPUT_DIR, 'team.html');
 const generateHTML = require('./generateHTML');
 const teamMembers = [];
@@ -19,7 +19,7 @@ const promptManager = () => {
         },
         {
             type: 'input',
-            name: 'Id',
+            name: 'id',
             message: 'Please enter your employee Id',
         },
         {
@@ -73,7 +73,7 @@ const promptEngineer = () => {
         },
         {
             type: 'input',
-            name: 'Id',
+            name: 'id',
             message: 'Please enter your employee Id',
         },
         {
@@ -102,7 +102,7 @@ const promptIntern = () => {
         },
         {
             type: 'input',
-            name: 'Id',
+            name: 'id',
             message: 'Please enter your employee Id',
         },
         {
