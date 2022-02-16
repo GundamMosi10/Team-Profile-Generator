@@ -35,7 +35,7 @@ describe("manager", () => {
     });
     describe("getofficeNumber", () => {
         it("should get the office number of the manager", () => {
-          const manager = new Manager ('bob', '88', 'bob@gmail.com', 'manager', '50');
+          const manager = new Manager ('bob', '88', 'bob@gmail.com', '50');
           const officeNumber = manager.getofficeNumber();
     
           expect(officeNumber).toEqual("50");
