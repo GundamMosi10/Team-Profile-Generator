@@ -1,8 +1,8 @@
 const inquirer = require('inquirer'); //inquirer package remember to install on command line
 const fs = require('fs'); //Filesystem
-const manager = require('manager');
-const engineer = require('engineer');
-const intern = require('intern');
+const Manager = require('manager');
+const Engineer = require('engineer');
+const Intern = require('intern');
 const teamMembers = [];
 
 const promptManager = () => {
@@ -39,36 +39,94 @@ const promptMenu = () => {
     {
         type: 'list',
         name: 'employeeType',
-        message: 'What kind of employee is this?',
+        message: 'What kind of employee are you?',
         choices: ['Manager', 'Engineer', 'Intern', 'Finish Team'],
-    }
-]).then(userChoices => {
-    switch (userChoices.menu) {
-        case 'Manager':
-            promptManager();
-            break;
-        case 'Engineer':
-            promptEngineer();
-            break;
-        case 'Intern':
-            promptIntern();
-            break;
-        default: 
-            FinishedTeam();
-    }
+    }])
+    .then(userChoices => {
+        switch (userChoices.menu) {
+            case 'Manager':
+                promptManager();
+                break;
+            case 'Engineer':
+                promptEngineer();
+                break;
+            case 'Intern':
+                promptIntern();
+                break;
+            default: 
+                FinishTeam();
+        }
+    });
+};
+
+const promptEngineer = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?',
+        },
+        {
+            type: 'input',
+            name: 'Id',
+            message: 'Please enter your employee Id',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter your email address',
+        },
+        {
+            type: 'input',
+            name: 'githubUserName',
+            message: 'What is your github user name?',
+        },
+    ]).then (answers => {
+        const engineer = new Engineer(answers.name, answers.Id, answers.email, answers.githubUserName)
+        teamMembers.push(engineer);
+        promptMenu();
+    }) 
 }
 
+const promptIntern = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?',
+        },
+        {
+            type: 'input',
+            name: 'Id',
+            message: 'Please enter your employee Id',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter your email address',
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'What school do you go to?',
+        },
+    ]).then (answers => {
+        const intern = new Intern(answers.name, answers.Id, answers.email, answers.school)
+        teamMembers.push(engineer);
+        promptMenu();
+    })
+}
+
+const FinishTeam = () => {
+    fs.writeFileSync(outputPath, generateHTML(teamMembers));
+}
+
+promptManager();
 
 
 
 
-
-
-
-
-
-
-
+ 
 
 
 
