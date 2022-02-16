@@ -1,12 +1,12 @@
 const inquirer = require('inquirer'); //inquirer package remember to install on command line
 const fs = require('fs'); //Filesystem
-const Manager = require('./manager'); //child of employee parent 
-const Engineer = require('./engineer'); //child of employee parent
-const Intern = require('./intern'); //child of employee parent
+const Manager = require('./lib/manager'); //child of employee parent 
+const Engineer = require('./lib/engineer'); //child of employee parent
+const Intern = require('./lib/intern'); //child of employee parent
 const path = require('path');
 const OUTPUT_DIR = path.resolve(__dirname, 'output')
 const outputPath = path.join(OUTPUT_DIR, 'team.html');
-const generateHTML = require('./generateHTML');
+const generateHTML = require('./src/generateHTML');
 const teamMembers = [];
 
 
