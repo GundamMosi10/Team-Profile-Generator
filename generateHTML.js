@@ -1,7 +1,50 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+const generateTeam = (team) => {
+  console.log(team);
+  const html = [];
+  const generateManager = manager => {
+    console.log(manager);
+    let managerHTML = `
+    <div class="card">
+          <img src="https://www.footballkitarchive.com/static/logos/players/Ronaldinho.jpg" class="card-img-top" alt="RonaldinhoImage">
+          <div class="card-body">
+            <h5 class="card-title">Manager</h5>
+            <p class="card-text"><ul class="list-group">
+                <li class="list-group-item">Name: ${manager.name}</li>
+                <li class="list-group-item">ID:${manager.id}</li>
+                <li class="list-group-item">Email: <span id='email'><a href='mailto:${manager.email}'>${manager.email}</a></span></li>
+                <li class="list-group-item">Office Number:${manager.officeNumber}</li>
+            </ul></p>
+            <p class="card-text"><small class="text-muted"></small></p>
+          </div>
+    </div>
+    `;
+    html.push(managerHTML);
+  }
+  const generateEngineer = engineer => {
+    console.log(engineer);
+    let engineerHTML = `
+    <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpIypCwWHGCZ6qrGyquEWFWjfoBmLAqrUIyTn3VaTjaqSWaMByv7pcY7kYH-4VpnCvdUE&usqp=CAU" class="card-img-top" alt="RonaldoBrazil">
+          <div class="card-body">
+            <h5 class="card-title">Engineer</h5>
+            <p class="card-text"><ul class="list-group">
+                <li class="list-group-item">Name:${engineer.name}</li>
+                <li class="list-group-item">ID:${engineer.id}</li>
+                <li class="list-group-item">Email:<span id='email'><a href='mailto:${engineer.email}'>${engineer.email}</a></span></li>
+                <li class="list-group-item">Github User Name: <a target='blank' href='https://github.com/${engineer.github}'>${engineer.github}</a></li>
+            </ul></p>
+            <p class="card-text"><small class="text-muted"></small></p>
+          </div>
+    </div>
+    `;
+    html.push(engineerHTML);
+  }
 
-function generateHTML(data) {
+}
+
+
+
+
 return`
 <!DOCTYPE html>
 <html lang="en">
