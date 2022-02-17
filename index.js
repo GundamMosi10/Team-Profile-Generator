@@ -4,7 +4,7 @@ const Manager = require('./lib/manager'); //child of employee parent
 const Engineer = require('./lib/engineer'); //child of employee parent
 const Intern = require('./lib/intern'); //child of employee parent
 const path = require('path');
-const OUTPUT_DIR = path.resolve(__dirname, 'output')
+const OUTPUT_DIR = path.resolve(__dirname, 'output')//created the file path for the new html file 
 const outputPath = path.join(OUTPUT_DIR, 'team.html');
 const generateHTML = require('./src/generateHTML');
 const teamMembers = [];
@@ -129,7 +129,7 @@ const FinishTeam = () => { //once finish team is selected then we can start the 
     fs.writeFileSync(outputPath, generateHTML(teamMembers));
 }
 
-promptManager();
+promptManager(); //First prompt the user sees in the command line 
 
 
 
