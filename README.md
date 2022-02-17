@@ -18,7 +18,7 @@
   -- [Test](#test)
   
   ## Usage:
-  Here is a link to a [demo]() 
+  Here is a link to a [demo](https://vimeo.com/678451692/5a71929454) 
   ## Installation:
   First by downloading the corresponding code repository to your computer, next you want to install the inquirer package in the command line of Terminal or GitBash with the code: npm install inquirer. Next after inquirer is installed you want to run the code: node index.js, this will then prompt the user with questions for each type of employee starting with the manager. And once you finish one set of questions it will prompt your if you want to add more employees to the team and you could have a team full of managers if you wanted or engineers or interns. Once you are satified with your team you can click 'Finish Team' in the prompt and that data will be rendered into a HTML file which will display all of your information about your team.  
   ## License:
